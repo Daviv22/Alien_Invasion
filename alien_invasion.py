@@ -200,6 +200,7 @@ class AlienInvasion:
             sleep(0.5)
         else:
             self.game_active = False
+            pygame.mouse.set_visible(True)
 
     def _check_aliens_bottom(self):
         """Checa se qualquer alien alcançou o fundo da tela"""
@@ -224,6 +225,9 @@ class AlienInvasion:
             # Cria uma nova frota e centraliza a nave
             self._create_fleet()
             self.ship.center_ship()
+
+            # Esconde o cursos do mouse
+            pygame.mouse.set_visible(False)
 
 if __name__ == '__main__':
     """Fazer uma instância do jogo, e rodar o jogo"""
