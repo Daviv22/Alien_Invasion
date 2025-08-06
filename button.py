@@ -20,3 +20,9 @@ class Button:
 
         # A mensagem do botão precisa ser preparada apenas uma vez.
         self._prep_msg(msg)
+
+    def _prep_msg(self, msg):
+        """Transforma msg em uma imagem renderizada e centraliza o texto no botão"""
+        self.msg_image = self.font.render(msg, True, self.text_color, self.button_color)
+        self.msg_image_rect = self.msg_image.get_rect()
+        self.msg_image_rect.center = self.rect.center
