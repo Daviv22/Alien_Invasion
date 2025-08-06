@@ -35,7 +35,7 @@ class AlienInvasion:
         self._create_fleet()
 
         # Começa Alien Invasion em um estado ativo
-        self.game_active = True
+        self.game_active = False
 
     def run_game(self):
         """Começa o loop principal do jogo"""
