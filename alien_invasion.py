@@ -78,6 +78,24 @@ class AlienInvasion:
             sys.exit()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
+        elif event.key == pygame.K_p:
+            self._start_game()
+
+    def _start_game(self):
+        # Reinicia as estatísticas do jogo
+        self.stats.reset_status()
+        self.game_active = True
+
+        # Se livra de qualquer balas e aliens restantes
+        self.bullets.empty()
+        self.aliens.empty()
+
+        # Cria uma nova frota e centraliza a nave
+        self._create_fleet()
+        self.ship.center_ship()
+
+        # Esconde o cursos do mouse
+        pygame.mouse.set_visible(False)
 
     def _check_keyup_events(self, event):
         """Responde a levantamento das teclas"""
