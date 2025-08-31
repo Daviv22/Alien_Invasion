@@ -26,3 +26,22 @@ class Settings:
         # Configurações da nave
         self.ship_speed = 1.5
         self.ship_limit = 3
+
+        # O quão rápido o jogo acelera
+        self.speedup_scale = 1.1
+        self.initialize_dynamic_settings()
+
+    def initialize_dynamic_settings(self):
+        """Inicializa as configurações que mudam ao longo jogo"""
+        self.ship_speed = 1.5
+        self.bullet_speed = 2.5
+        self.alien_speed = 1.0
+
+        # flee_direction de 1 representa direita; -1 representa esquerda
+        self.fleet_direction = 1
+
+    def increase_speed(self):
+        """Aumenta as configurações de velocidade"""
+        self.ship_speed *= self.speedup_scale
+        self.bullet_speed *= self.speedup_scale
+        self.alien_speed *= self.speedup_scale

@@ -149,6 +149,7 @@ class AlienInvasion:
             # Destrói balas existentes e cria uma nova frota
             self.bullets.empty()
             self._create_fleet()
+            self.settings.increase_speed()
 
     def _create_alien(self, x_position, y_position):
         """Cria um alien e coloca na fileira"""
